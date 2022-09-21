@@ -7,8 +7,14 @@ export const Navbar = () => {
             <div className='relative z-20 top-0 bg-slate-800 h-20 w-full text-white'> 
                
                  <div className='flex flex-justify-center items-center'>
-                    <div className=' py-12 flex flex-justify-center text-white'>
+                    <div className='ml-3 py-12 flex flex-justify-center text-white'>
                     <Link to='contactForm'>ContactForm</Link>
+                    </div>
+                    <div className='ml-4 py-12 flex flex-justify-center text-white'>
+                    <Link to='postForm'>PostForm</Link>
+                    </div>
+                    <div className=' ml-4 py-12 flex flex-justify-center text-white'>
+                    <Link to='post'>Post List</Link>
                     </div>
                     <div  className='ml-7 flex flex-justify-center text-white'>
                     <Link to='contactList'>ContactList</Link>

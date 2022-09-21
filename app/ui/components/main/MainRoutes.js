@@ -8,7 +8,8 @@ import {
   import { NotFound } from '../../notFound/NotFound';
   import { ContactForm } from '../../contacts/ContactForm';
   import { ContactList } from '../../contacts/ContactList';
-
+ import { Post } from '../../post/Post';
+ import { PostForm } from '../../post/PostForm';
   
   export const MainRoutes = () => (
       
@@ -16,6 +17,8 @@ import {
           <Route path="/" element={<Home />} />
           <Route path="contactList" element={<ContactList/>} />
           <Route path="contactForm" element={<ContactForm />} />
+          <Route path="postForm" element={<PostForm />} />
+          <Route path="post" element={<Post />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
        
