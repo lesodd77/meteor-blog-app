@@ -6,6 +6,7 @@ import { ContactsCollection } from '../../api/ContactsCollection';
 import { useSubscribe, useFind } from 'meteor/react-meteor-data';
 // eslint-disable-next-line import/no-unresolved
 import { Loading } from '../components/spinner/Loading';
+import { Cloudinary } from 'meteor/socialize:cloudinary';
 
 
 export const ContactList = () => {
@@ -29,8 +30,8 @@ export const ContactList = () => {
   const ContactItem = memo(({ contact }) => (
       <li className="py-4 flex items-center justify-between space-x-3">
         <div className="min-w-0 flex-1 flex items-center space-x-3">
-         {contact.imageUrl && (<div className="flex-shrink-0">
-            <img className="h-10 w-10 rounded-full" src={contact.image} alt="" />
+         {contact.image && (<div className="flex-shrink-0">
+            <img className="h-10 w-10 rounded-full" src={Cloudinary.url(contact.image, { crop: "scale", width: 60})} alt="" />
                                </div>)}
           <div className="min-w-0 flex-1">
             <p className="text-sm font-medium text-gray-900 truncate">{contact.name}</p>
