@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { PostsCollection } from './posts.collection';
+import { PostsCollection } from '../collections/posts.collection';
 
 
 Meteor.publish('allPosts', function publishAllPosts() {

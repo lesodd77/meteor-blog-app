@@ -5,10 +5,10 @@ import SimpleSchema from 'simpl-schema';
 export const PostsCollection = new Mongo.Collection('posts');
 
 const PostsSchema = new SimpleSchema({
-  postImage: {
+  url: {
     type: String,
   },
-  authorImage: {
+  image: {
     type: String,
   },
   author: {
@@ -27,7 +27,7 @@ const PostsSchema = new SimpleSchema({
     type: String,
   },
 
-  textarea: {
+  description: {
     type: String,
     
   },

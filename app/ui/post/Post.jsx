@@ -1,12 +1,12 @@
-// @ts-nocheck
+//@ts-nocheck
 import { Meteor } from 'meteor/meteor'
 import React, { memo } from 'react'
-import { PostsCollection } from '../../api/posts.collection'
+import { PostsCollection } from '../../api/collections/posts.collection'
 import { useSubscribe, useFind } from 'meteor/react-meteor-data'
 import { Loading } from '../components/spinner/Loading'
+import { Cloudinary } from 'meteor/socialize:cloudinary';
 
 export const Post = () => {
- ;
   const isLoading = useSubscribe('allPosts')
   const posts = useFind(() =>
     PostsCollection.find(
@@ -57,7 +57,7 @@ export const Post = () => {
             <a href="news">
               <img
                 className="object-cover w-full h-48 rounded-t-md hover:bg-gray-300 hover:ring-sky-400"
-                src={post.postImage}
+                src={post.url}
                 alt=""
               />
             </a>
@@ -70,8 +70,8 @@ export const Post = () => {
                     </a>
                   </p>
                   <a href={post.href} className="mt-2 block">
-                    <p className="text-xl font-serif font-semibold text-primary line-clamp-1 hover:line-clamp-none">{post.title}</p>
-                    <p className="font-serif  text-sm font-medium text-gray-700  line-clamp-3 hover:line-clamp-none">{post.textarea}</p>
+                    <p className="text-xl font-serif font-semibold text-primary line-clamp-1">{post.title}</p>
+                    <p className="font-serif  text-sm font-medium text-gray-700 truncate line-clamp-1">{post.description}</p>
                   </a>
                 </div>
             <div className="flex items-center mt-6">
@@ -79,13 +79,14 @@ export const Post = () => {
                 <span className="sr-only">{post.author}</span>
                 <img
                   className="w-10 h-10 rounded-full"
-                  src={post.authorImage}
+                  src={Cloudinary.url(post.image, { crop: "scale", width: 60})}
                   alt=""
                 />
               </div>
               <div className="ml-3">
                 <p className="text-sm font-medium text-gray-900">
-                  {post.author}
+                <span>By &nbsp;
+                  {post.author}</span>
                 </p>
                 <div className="flex space-x-1 text-sm text-gray-500">
                   <span>{post.date}</span>

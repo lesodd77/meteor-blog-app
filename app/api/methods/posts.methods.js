@@ -2,21 +2,25 @@
 // @ts-nocheck
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check'
-import { PostsCollection } from './posts.collection';
+import { PostsCollection } from '../collections/posts.collection';
 
 Meteor.methods({
 
 
-  'posts.insert'({ title, postImage, textarea, date, category, author, authorIamge }) {
+  'posts.insert'({ title, url, description, date, category, author, imgae }) {
     check(title, String);
-    check(postImage, String);
-    check(authorIamge, String);
+    check(url, String);
+    check(imgae, String);
     check(author, String);
-    check(textarea, String);
+    check(description, String);
     check(category, String);
     check(date, String);
 
-    if (!postImage) {
+    if (!url) {
+      throw new Meteor.Error('Photo is required.');
+    }
+
+    if (!image) {
       throw new Meteor.Error('Photo is required.');
     }
     if (!title) {
@@ -32,7 +36,7 @@ Meteor.methods({
     if (!author) {
       throw new Meteor.Error('Author is required.');
     }
-    if (!textarea) {
+    if (!description) {
       throw new Meteor.Error('Content is required.');
     }
    
@@ -40,11 +44,11 @@ Meteor.methods({
    
     return PostsCollection.insert({
         title,
-         postImage,
+         url,
          date,
-         textarea,
+         description,
          author,
-         authorIamge, 
+         imgae, 
           category,
       createdAt: new Date(),
     });

@@ -1,9 +1,13 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
 // eslint-disable-next-line import/no-unresolved
 import { ErrorAlert } from '../components/alerts/ErrorAlert';
 // eslint-disable-next-line import/no-unresolved
 import { SuccessAlert } from '../components/alerts/SuccessAlert';
+import { Cloudinary } from 'meteor/socialize:cloudinary';
+
+import { useFind } from 'meteor/react-meteor-data'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -15,6 +19,8 @@ export const ContactForm = () => {
   const [error, setError] = useState('');
   const [image, setImage] = useState('');
   const [success, setSuccess] = useState('');
+
+  const uploads = useFind(() => Cloudinary.collection.find());
 
  // eslint-disable-next-line no-shadow
  const showError = ({ message }) => {
@@ -47,7 +53,6 @@ const saveContact = () => {
   });
 };
 
-
   useEffect(() => {
     AOS.init({
       delay: 200,
@@ -55,7 +60,16 @@ const saveContact = () => {
       once: false,
     // @ts-ignore
     }, []);
-   });
+  });
+
+  const handleImage = (files) => {
+    const uploads = Cloudinary.uploadFiles(files);
+    uploads.forEach(async (response) => {
+      const photoData = await response;
+      console.log(photoData);
+      setImage(photoData.public_id);
+    });
+};
 
   return (
     <>
@@ -97,7 +111,7 @@ const saveContact = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                     className="bg-white dark:bg-slate-800 shadow-md border border-gray-200 outline-none px-4 py-2 rounded-md hover:border-gray-400 focus:border-gray-400"/>
-                    
+
                     <input
                     type="text"
                     id="subject"
@@ -107,11 +121,20 @@ const saveContact = () => {
                     className="bg-white dark:bg-slate-800 shadow-md border border-gray-200 outline-none px-4 py-2 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"/>
   <input
                     type="file"
-                    id="image/*"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
+                  id="image/*"
+                  accept='image/*, video/*'
+                    onChange={(e) => handleImage(e.target.files)}
                     placeholder="Image"
                     className="bg-white dark:bg-slate-800 shadow-md border border-gray-200 outline-none px-4 py-2 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"/>
+                <ul>
+                  {uploads.map((upload) => (
+                    <li key={upload._id}>
+                      <img src={upload.preview} className="max-w-10 max-h-10" />
+                      {upload.percent_uploaded}%
+                    </li>
+                  ))}
+                    </ul>
+
 </div>
                 <button
                   onClick={saveContact}
@@ -121,7 +144,8 @@ const saveContact = () => {
                 </button>
             </form>
         </div>
-    </div>
+        </div>
+        {image && <img src={Cloudinary.url(image, { crop: "scale", width: 200 })} />}
     </section>
     </>
   );
