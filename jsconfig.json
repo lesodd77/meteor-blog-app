@@ -7,6 +7,76 @@
     "paths": {
       "/*": [
         "./*"
+      ],
+      "meteor/mongo": [
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/local_collection_driver.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/collection.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/connection_options.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/doc_fetcher.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/mongo_driver.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/mongo_utils.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/observe_multiplex.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/oplog_observe_driver.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/oplog_tailing.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/oplog_v2_converter.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/polling_observe_driver.js",
+        "/home/simon/.meteor/packages/mongo/1.15.0/web.browser/remote_collection_driver.js"
+      ],
+      "meteor/reactive-var": [
+        "/home/simon/.meteor/packages/reactive-var/1.0.11/web.browser/reactive-var.js"
+      ],
+      "meteor/es5-shim": [
+        "/home/simon/.meteor/packages/es5-shim/4.8.0/web.browser/client.js",
+        "/home/simon/.meteor/packages/es5-shim/4.8.0/web.browser/console.js",
+        "/home/simon/.meteor/packages/es5-shim/4.8.0/web.browser/cordova.js",
+        "/home/simon/.meteor/packages/es5-shim/4.8.0/web.browser/export_globals.js",
+        "/home/simon/.meteor/packages/es5-shim/4.8.0/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/home/simon/.meteor/packages/ecmascript/0.16.2/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/home/simon/.meteor/packages/shell-server/0.5.0/web.browser/main.js",
+        "/home/simon/.meteor/packages/shell-server/0.5.0/web.browser/shell-server.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/home/simon/.meteor/packages/hot-module-replacement/0.5.1/web.browser/hot-api.js",
+        "/home/simon/.meteor/packages/hot-module-replacement/0.5.1/web.browser/client.js",
+        "/home/simon/.meteor/packages/hot-module-replacement/0.5.1/web.browser/server.js"
+      ],
+      "meteor/react-meteor-data": [
+        "/home/simon/.meteor/packages/react-meteor-data/2.5.1/web.browser/index.js"
+      ],
+      "meteor/aldeed:collection2": [
+        "/home/simon/.meteor/packages/aldeed_collection2/3.5.0/web.browser/collection2.js",
+        "/home/simon/.meteor/packages/aldeed_collection2/3.5.0/web.browser/lib.js"
+      ],
+      "meteor/matb33:collection-hooks": [
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/client.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/advices.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/collection-hooks.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/find.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/findone.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/insert.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/remove.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/server.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/update.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/upsert.js",
+        "/home/simon/.meteor/packages/matb33_collection-hooks/1.1.2/web.browser/users-compat.js"
+      ],
+      "meteor/socialize:cloudinary": [
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/client/client.js",
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/entry-rn.js",
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/client/cloudinary.js",
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/client/versionCheck.js",
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/server/configuration.js",
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/server/server.js",
+        "/home/simon/.meteor/packages/socialize_cloudinary/1.0.8/web.browser/server/versionCheck.js"
+      ],
+      "meteor/accounts-password": [
+        "/home/simon/.meteor/packages/accounts-password/2.3.1/web.browser/password_client.js",
+        "/home/simon/.meteor/packages/accounts-password/2.3.1/web.browser/email_templates.js",
+        "/home/simon/.meteor/packages/accounts-password/2.3.1/web.browser/password_server.js"
       ]
     }
   },

@@ -19,7 +19,7 @@ export const MainRoutes = () => {
 
               <Routes>
                   <Route path={RoutePaths.ROOT} element={<App/>}>
-                  <Route element={<AdminRegister />} index/>
+                  <Route element={<AdminRegister />} path={RoutePaths.ADMINLOGIN}/>
                       <Route element={<Home/>} path={RoutePaths.HOME}/>
                       <Route element={<Post/>} path={RoutePaths.POST}/>
                       <Route element={<Profile/>} path={RoutePaths.PROFILE}/>

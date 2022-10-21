@@ -7,10 +7,10 @@ import { PostsCollection } from '../collections/posts.collection';
 Meteor.methods({
 
 
-  'posts.insert'({ title, url, description, date, category, author, imgae }) {
+  'posts.insert'({ title, url, description, date, category, author, image }) {
     check(title, String);
     check(url, String);
-    check(imgae, String);
+    check(image, String);
     check(author, String);
     check(description, String);
     check(category, String);
@@ -48,7 +48,7 @@ Meteor.methods({
          date,
          description,
          author,
-         imgae, 
+         image, 
           category,
       createdAt: new Date(),
     });
